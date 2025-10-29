@@ -27,13 +27,20 @@ If you are using the ready to use direction finding image first disable the auto
 
 Next copy the heimdall_only_start.sh and heimdall_only_stop.sh file from this repo into your krakensdr root directory.
 
-In the heimdall_daq_fw folder edit your Firmware/daq_chain_config.ini file and change out_data_iface_type to eth.
+~~In the heimdall_daq_fw folder edit your Firmware/daq_chain_config.ini file and change out_data_iface_type to eth.
 
 ```
 [data_interface]
 out_data_iface_type = eth
 ```
-
+~~
+Insted make sure the following files are executable (by running chmod +x filename):
+- use_eth.sh
+- use_shmem.sh
+- heimdall_only_start.sh
+- heimdall_only_stop.sh
+- kraken_doa_start.sh
+- kraken_doa_stop.sh
 Then in the krakensdr root directory run ./heimdall_only_start.sh
 
 Now you can start your GRC file with the KrakenSDR source, and it will make a socket connection to the heimdall code at IP 127.0.0.1. Alternatively, you can run the heimdall code on a networked device, but you will need a fast Gigabit and possibly direct network connection to ensure the network throughput is sufficient to handle the five channels.
