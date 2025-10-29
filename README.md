@@ -25,16 +25,17 @@ First install Heimdall https://github.com/krakenrf/heimdall_daq_fw.
 
 If you are using the ready to use direction finding image first disable the autoboot of the direction finding software, or it could interfere with the heimdall connection. Go into the /boot directory and rename "start_kraken.sh" to something like "start_kraken.sh_stop" to stop the direction finding app autobooting.
 
-Next copy the heimdall_only_start.sh and heimdall_only_stop.sh file from this repo into your krakensdr root directory.
+~~Next copy the heimdall_only_start.sh and heimdall_only_stop.sh file from this repo into your krakensdr root directory.~~
 
-~~In the heimdall_daq_fw folder edit your Firmware/daq_chain_config.ini file and change out_data_iface_type to eth.
+~~In the heimdall_daq_fw folder edit your Firmware/daq_chain_config.ini file and change out_data_iface_type to eth.~~
 
-```
-[data_interface]
-out_data_iface_type = eth
-```
-~~
-Insted make sure the following files are executable (by running chmod +x filename):
+
+~~[data_interface]~~
+
+~~out_data_iface_type = eth~~
+
+
+Insted also cope the files below from this repo to your krakensdr root directory make sure the following files are executable (by running chmod +x filename):
 - use_eth.sh
 - use_shmem.sh
 - heimdall_only_start.sh
