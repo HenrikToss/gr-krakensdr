@@ -4,6 +4,13 @@
 eval "$(conda shell.bash hook)"
 conda activate kraken
 
+# Auto-check DAQ output mode
+INI_FILE="heimdall_daq_fw/Firmware/daq_chain_config.ini"
+
+if grep -q "out_data_iface_type *= *shmem" "$INI_FILE"; then
+        bash use_eth.sh
+fi
+
 ./heimdall_only_stop.sh
 sleep 2
 
